@@ -1,1 +1,69 @@
-#include <bits/stdc++.h>using namespace std; using ll            = long long;using vec           = vector<ll>;using vecStr        = vector<string>;using vecChr        = vector<char>;using vecBool       = vector<bool>;using vec2d         = vector<vec>;using vecP_ll_ll    = vector<pair<ll, ll>>;using vecP_ll_str   = vector<pair<ll, string>>;using unmp_ll_ll    = unordered_map<ll, ll>;using unmp_chr_ll   = unordered_map<char, ll>;using unmp_str_ll   = unordered_map<string, ll>;using st_ll         = set<ll>;using st_chr        = set<char>;using st_str        = set<string>;using que_ll        = queue<ll>;using queP          = queue<pair<ll, ll>>; #define pb          push_back#define pp          pop_back#define ff          first#define ss          second#define all(x)      (x).begin(), (x).end()#define rall(x)     (x).rbegin(), (x).rend()#define rev(x)      (x).begin(), (x).end()#define sz(x)       (int)(x).size()#define nl          endl const ll MOD        = 1e9 + 7;const ll INF        = LLONG_MAX;const ll NINF       = LLONG_MIN; unmp_ll_ll mp; vec arrayCreation(ll n) {    vec a(n);    for (auto &x : a) {        cin >> x;                mp[x]++;    }        return a;} void solve() {    ll n;    cin >> n;        vec a = arrayCreation(n);    sort(all(a));        if (a[0] == a[n - 1])        cout << 0 << " " << (n * (n - 1)) / 2 << nl;    else        cout << a[n - 1] - a[0] << " " << mp[a[n - 1]] * mp[a[0]] << nl;        mp.clear();} int main() {    ll t = 1;    // cin >> t;     while (t--)        solve();}
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll            = long long;
+using vec           = vector<ll>;
+using vecStr        = vector<string>;
+using vecChr        = vector<char>;
+using vecBool       = vector<bool>;
+using vec2d         = vector<vec>;
+using vecP_ll_ll    = vector<pair<ll, ll>>;
+using vecP_ll_str   = vector<pair<ll, string>>;
+using unmp_ll_ll    = unordered_map<ll, ll>;
+using unmp_chr_ll   = unordered_map<char, ll>;
+using unmp_str_ll   = unordered_map<string, ll>;
+using st_ll         = set<ll>;
+using st_chr        = set<char>;
+using st_str        = set<string>;
+using que_ll        = queue<ll>;
+using queP          = queue<pair<ll, ll>>;
+
+#define pb          push_back
+#define pp          pop_back
+#define ff          first
+#define ss          second
+#define all(x)      (x).begin(), (x).end()
+#define rall(x)     (x).rbegin(), (x).rend()
+#define rev(x)      (x).begin(), (x).end()
+#define sz(x)       (int)(x).size()
+#define nl          endl
+
+const ll MOD        = 1e9 + 7;
+const ll INF        = LLONG_MAX;
+const ll NINF       = LLONG_MIN;
+
+unmp_ll_ll mp;
+
+vec arrayCreation(ll n) {
+    vec a(n);
+    for (auto &x : a) {
+        cin >> x;
+        
+        mp[x]++;
+    }
+    
+    return a;
+}
+
+void solve() {
+    ll n;
+    cin >> n;
+    
+    vec a = arrayCreation(n);
+    sort(all(a));
+    
+    if (a[0] == a[n - 1])
+        cout << 0 << " " << (n * (n - 1)) / 2 << nl;
+    else
+        cout << a[n - 1] - a[0] << " " << mp[a[n - 1]] * mp[a[0]] << nl;
+    
+    mp.clear();
+}
+
+int main() {
+    ll t = 1;
+    // cin >> t;
+
+    while (t--)
+        solve();
+}
