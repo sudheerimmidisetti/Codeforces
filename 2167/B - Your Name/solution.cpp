@@ -81,12 +81,16 @@ vec arrayCreation(ll n) {
 }
 
 void solve() {
-    ll a, b, c, d;
-    cin >> a >> b >> c >> d;
+    ll n;
+    cin >> n;
     
-    st_ll st({a, b, c, d});
+    string s, t;
+    cin >> s >> t;
     
-    if (sz(st) == 1)
+    sort(all(s));
+    sort(all(t));
+    
+    if (s == t)
         cout << "YES" << nl;
     else
         cout << "NO" << nl;
