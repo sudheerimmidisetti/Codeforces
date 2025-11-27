@@ -1,1 +1,127 @@
-#include <bits/stdc++.h>using namespace std; using ll                = long long;using vec               = vector<ll>;using vec2d             = vector<vec>;using vecStr            = vector<string>;using vecStr2d          = vector<vecStr>;using vecChr            = vector<char>;using vecChr2d          = vector<vecChr>;using vecBool           = vector<bool>;using vecP_ll_ll        = vector<pair<ll, ll>>;using vecP_ll_str       = vector<pair<ll, string>>;using unmp_ll_ll        = unordered_map<ll, ll>;using unmp_ll_chr       = unordered_map<ll, char>;using unmp_chr_ll       = unordered_map<char, ll>;using unmp_str_ll       = unordered_map<string, ll>;using unmp_str_str      = unordered_map<string, string>;using st_ll             = set<ll>;using st_chr            = set<char>;using st_str            = set<string>;using que_ll            = queue<ll>;using queP              = queue<pair<ll, ll>>; #define pb              push_back#define ppb             pop_back#define ff              first#define ss              second#define all(x)          (x).begin(), (x).end()#define rall(x)         (x).rbegin(), (x).rend()#define sm(x, y, z)     (x).begin() + y, (x).begin() + z#define mx(x)           *max_element(all(x))#define mn(x)           *min_element(all(x))#define accum(x)        accumulate(all(x), 0LL)#define sz(x)           (int)(x).size()#define nl              endl const ll MOD            = 1e9 + 7;const ll INF            = LLONG_MAX;const ll NINF           = LLONG_MIN; vecBool isPrime(1e6 + 10, true); void generatePrimes() {    isPrime[0] = isPrime[1] = false;    for (int i = 2; i * i <= (ll)(1e6 + 10); i++) {        if (isPrime[i]) {            for (int j = i * i; j <= (ll)(1e6 + 10); j += i)                isPrime[j] = false;        }    }} ll nextPrime(ll n) {    while (!isPrime[n])        n++;        return n;} vec divisorsCnt(1e6 + 1, 0); void getDivisors() {    for (ll i = 1; i <= (ll)(1e6 + 1); i++)        for (ll j = i; j <= (ll)(1e6 + 1); j += i)            divisorsCnt[j]++;} bool isPalindrome(string s) {    int i = 0, j = sz(s) - 1;    while (i < j)        if (s[i++] != s[j--]) return false;        return true;} vec arrayCreation(ll n) {    vec a(n);    for (auto &x : a)        cin >> x;     return a;} void solve() {    ll n;    cin >> n;     vec a = arrayCreation(n);     vec prefSum(n, 0);    prefSum[0] = a[0];    for (int i = 1; i < n; i++)        prefSum[i] = prefSum[i - 1] + a[i];     bool found = false;    for (int l = 1; l < n - 1; l++) {        for (int r = l + 1; r < n; r++) {            ll s1 = prefSum[l - 1] % 3;            ll s2 = (prefSum[r - 1] - prefSum[l - 1]) % 3;            ll s3 = (prefSum[n - 1] - prefSum[r - 1]) % 3;             if ((s1 == s2 && s2 == s3) || (s1 != s2 && s2 != s3 && s1 != s3)) {                cout << l << " " << r << nl;                 found = true;                break;            }        }         if (found)            break;    }     if (!found)        cout << "0 0" << nl;} int main() {    ll t = 1;    cin >> t;     // generatePrimes();    // getDivisors();    while (t--)        solve();}
+#include <bits/stdc++.h>
+using namespace std;
+ 
+using ll                = long long;
+using vec               = vector<ll>;
+using vec2d             = vector<vec>;
+using vecStr            = vector<string>;
+using vecStr2d          = vector<vecStr>;
+using vecChr            = vector<char>;
+using vecChr2d          = vector<vecChr>;
+using vecBool           = vector<bool>;
+using vecP_ll_ll        = vector<pair<ll, ll>>;
+using vecP_ll_str       = vector<pair<ll, string>>;
+using unmp_ll_ll        = unordered_map<ll, ll>;
+using unmp_ll_chr       = unordered_map<ll, char>;
+using unmp_chr_ll       = unordered_map<char, ll>;
+using unmp_str_ll       = unordered_map<string, ll>;
+using unmp_str_str      = unordered_map<string, string>;
+using st_ll             = set<ll>;
+using st_chr            = set<char>;
+using st_str            = set<string>;
+using que_ll            = queue<ll>;
+using queP              = queue<pair<ll, ll>>;
+ 
+#define pb              push_back
+#define ppb             pop_back
+#define ff              first
+#define ss              second
+#define all(x)          (x).begin(), (x).end()
+#define rall(x)         (x).rbegin(), (x).rend()
+#define sm(x, y, z)     (x).begin() + y, (x).begin() + z
+#define mx(x)           *max_element(all(x))
+#define mn(x)           *min_element(all(x))
+#define accum(x)        accumulate(all(x), 0LL)
+#define sz(x)           (int)(x).size()
+#define nl              endl
+ 
+const ll MOD            = 1e9 + 7;
+const ll INF            = LLONG_MAX;
+const ll NINF           = LLONG_MIN;
+ 
+vecBool isPrime(1e6 + 10, true);
+ 
+void generatePrimes() {
+    isPrime[0] = isPrime[1] = false;
+    for (int i = 2; i * i <= (ll)(1e6 + 10); i++) {
+        if (isPrime[i]) {
+            for (int j = i * i; j <= (ll)(1e6 + 10); j += i)
+                isPrime[j] = false;
+        }
+    }
+}
+ 
+ll nextPrime(ll n) {
+    while (!isPrime[n])
+        n++;
+    
+    return n;
+}
+ 
+vec divisorsCnt(1e6 + 1, 0);
+ 
+void getDivisors() {
+    for (ll i = 1; i <= (ll)(1e6 + 1); i++)
+        for (ll j = i; j <= (ll)(1e6 + 1); j += i)
+            divisorsCnt[j]++;
+}
+ 
+bool isPalindrome(string s) {
+    int i = 0, j = sz(s) - 1;
+    while (i < j)
+        if (s[i++] != s[j--]) return false;
+    
+    return true;
+}
+ 
+vec arrayCreation(ll n) {
+    vec a(n);
+    for (auto &x : a)
+        cin >> x;
+ 
+    return a;
+}
+
+void solve() {
+    ll n;
+    cin >> n;
+
+    vec a = arrayCreation(n);
+
+    vec prefSum(n, 0);
+    prefSum[0] = a[0];
+    for (int i = 1; i < n; i++)
+        prefSum[i] = prefSum[i - 1] + a[i];
+
+    bool found = false;
+    for (int l = 1; l < n - 1; l++) {
+        for (int r = l + 1; r < n; r++) {
+            ll s1 = prefSum[l - 1] % 3;
+            ll s2 = (prefSum[r - 1] - prefSum[l - 1]) % 3;
+            ll s3 = (prefSum[n - 1] - prefSum[r - 1]) % 3;
+
+            if ((s1 == s2 && s2 == s3) || (s1 != s2 && s2 != s3 && s1 != s3)) {
+                cout << l << " " << r << nl;
+
+                found = true;
+                break;
+            }
+        }
+
+        if (found)
+            break;
+    }
+
+    if (!found)
+        cout << "0 0" << nl;
+}
+
+int main() {
+    ll t = 1;
+    cin >> t;
+ 
+    // generatePrimes();
+    // getDivisors();
+    while (t--)
+        solve();
+}
