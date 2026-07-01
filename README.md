@@ -6,7 +6,7 @@
 
 | Total Problems | Topics |
 |---|---|
-| 5 | 3 |
+| 5 | 6 |
 
 ---
 
@@ -14,7 +14,10 @@
 
 - [Uncategorized](#uncategorized) (4)
 - [data structures](#data-structures) (1)
+- [dp](#dp) (1)
+- [greedy](#greedy) (1)
 - [implementation](#implementation) (1)
+- [math](#math) (1)
 
 ---
 
@@ -33,11 +36,29 @@
 |---|---------|------------|----------|
 | 222B | [Cosmic Tables](https://codeforces.com/contest/222/problem/B) | 1300 | [C++23 (GCC 14-64, msys2)](https://github.com/sudheerimmidisetti/Codeforces/blob/HEAD/222/B%20-%20Cosmic%20Tables/solution.cpp) |
 
+### dp
+
+| # | Problem | Difficulty | Solution |
+|---|---------|------------|----------|
+| 2241D | [An Alternative Way](https://codeforces.com/contest/2241/problem/D) | Unrated | [C++23 (GCC 14-64, msys2)](https://github.com/sudheerimmidisetti/Codeforces/blob/HEAD/2241/D%20-%20An%20Alternative%20Way/solution.cpp) |
+
+### greedy
+
+| # | Problem | Difficulty | Solution |
+|---|---------|------------|----------|
+| 2241D | [An Alternative Way](https://codeforces.com/contest/2241/problem/D) | Unrated | [C++23 (GCC 14-64, msys2)](https://github.com/sudheerimmidisetti/Codeforces/blob/HEAD/2241/D%20-%20An%20Alternative%20Way/solution.cpp) |
+
 ### implementation
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
 | 222B | [Cosmic Tables](https://codeforces.com/contest/222/problem/B) | 1300 | [C++23 (GCC 14-64, msys2)](https://github.com/sudheerimmidisetti/Codeforces/blob/HEAD/222/B%20-%20Cosmic%20Tables/solution.cpp) |
+
+### math
+
+| # | Problem | Difficulty | Solution |
+|---|---------|------------|----------|
+| 2241D | [An Alternative Way](https://codeforces.com/contest/2241/problem/D) | Unrated | [C++23 (GCC 14-64, msys2)](https://github.com/sudheerimmidisetti/Codeforces/blob/HEAD/2241/D%20-%20An%20Alternative%20Way/solution.cpp) |
 
 ---
 
