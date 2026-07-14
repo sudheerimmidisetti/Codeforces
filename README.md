@@ -6,13 +6,13 @@
 
 | Total Problems | Topics |
 |---|---|
-| 9 | 7 |
+| 10 | 7 |
 
 ---
 
 ## 📂 Topic-Wise Problems
 
-- [Uncategorized](#uncategorized) (7)
+- [Uncategorized](#uncategorized) (8)
 - [data structures](#data-structures) (1)
 - [dp](#dp) (1)
 - [greedy](#greedy) (2)
@@ -33,6 +33,7 @@
 | 2242A | [Bigrams](https://codeforces.com/contest/2242/problem/A) | Unrated | [C++23 (GCC 14-64, msys2)](https://github.com/sudheerimmidisetti/Codeforces/blob/HEAD/2242/A%20-%20Bigrams/solution.cpp) |
 | 2242B | [Predominant Frequency Division](https://codeforces.com/contest/2242/problem/B) | Unrated | [C++23 (GCC 14-64, msys2)](https://github.com/sudheerimmidisetti/Codeforces/blob/HEAD/2242/B%20-%20Predominant%20Frequency%20Division/solution.cpp) |
 | 2244A | [Iskander and Drawings](https://codeforces.com/contest/2244/problem/A) | Unrated | [C++23 (GCC 14-64, msys2)](https://github.com/sudheerimmidisetti/Codeforces/blob/HEAD/2244/A%20-%20Iskander%20and%20Drawings/solution.cpp) |
+| 2244B | [Nikita and Books](https://codeforces.com/contest/2244/problem/B) | Unrated | [C++23 (GCC 14-64, msys2)](https://github.com/sudheerimmidisetti/Codeforces/blob/HEAD/2244/B%20-%20Nikita%20and%20Books/solution.cpp) |
 
 ### data structures
 
